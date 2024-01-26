@@ -4,12 +4,12 @@ using UnityEditor;
 using UnityEngine;
 
 
-[CustomEditor(typeof(MapMaker))]
+[CustomEditor(typeof(HexWorld.MapMaker))]
 public class MapMakerEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        MapMaker generator = (MapMaker)target;
+        HexWorld.MapMaker generator = (HexWorld.MapMaker)target;
 
         base.DrawDefaultInspector();
 
@@ -21,7 +21,7 @@ public class MapMakerEditor : Editor
 
         if (GUILayout.Button("Clear"))
         {
-            generator.DestroyCell();
+            generator.DestroyHexField();
         }
     }
 }

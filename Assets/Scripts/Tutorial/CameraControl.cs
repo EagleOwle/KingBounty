@@ -10,7 +10,7 @@ public class CameraControl : MonoBehaviour
 
     private void Start()
     {
-        targetY = 35;
+        targetY = 5;
     }
 
     private void Update()
@@ -28,6 +28,6 @@ public class CameraControl : MonoBehaviour
         z += Input.GetAxis("Vertical") * speed * Time.deltaTime;
         
         transform.position = new Vector3(x, y, z);
-        transform.rotation = Quaternion.AngleAxis((y * 2) + angleOffset, Vector3.right);
+        //transform.rotation = Quaternion.AngleAxis((y * 2) + angleOffset, Vector3.right);
     }
 }
