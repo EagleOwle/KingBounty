@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f747aac80c80345b7bae63bbe760d7, type: 3}
+  m_Name: CellTypeData
+  m_EditorClassIdentifier: 
+  CellTypes:
+  - Name: Blue
+    Type: 0
+    color: {r: 0.10008526, g: 0, b: 1, a: 1}
+    sprite: {fileID: 113338128, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+  - Name: RifleGreen
+    Type: 1
+    color: {r: 0.07067094, g: 0.46226418, b: 0.019624414, a: 1}
+    sprite: {fileID: -187966801, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+  - Name: LightGreen
+    Type: 2
+    color: {r: 0.094770074, g: 1, b: 0, a: 1}
+    sprite: {fileID: -1542159157, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+  - Name: Yellow
+    Type: 3
+    color: {r: 1, g: 0.99867284, b: 0.033018887, a: 1}
+    sprite: {fileID: 111892566, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+  - Name: Gray
+    Type: 4
+    color: {r: 0.4433962, g: 0.43712175, b: 0.43712175, a: 1}
+    sprite: {fileID: -279345884, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+  - Name: White
+    Type: 5
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 1805454559, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}

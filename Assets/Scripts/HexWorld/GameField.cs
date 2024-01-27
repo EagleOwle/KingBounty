@@ -8,25 +8,6 @@ namespace HexWorld
     [CreateAssetMenu()]
     public class GameField : ScriptableObject
     {
-        //#region Singleton
-        //public static GameField Instance
-        //{
-        //    get
-        //    {
-        //        if (instance == null)
-        //        {
-        //            instance = Resources.Load<GameField>("GameField") as GameField;
-        //        }
-
-        //        return instance;
-        //    }
-        //}
-        //private static GameField instance;
-        //#endregion
-
-        //public static Dictionary<Vector2, Cell> Cells => Instance.cells;
-        //private Dictionary<Vector2, Cell> cells = new Dictionary<Vector2, Cell>();
-
         public  Cell[,] Cells => cells;
         private Cell[,] cells = new Cell[0, 0];
 
@@ -35,23 +16,34 @@ namespace HexWorld
             cells = new Cell[fieldSize.x, fieldSize.y];
         }
 
-        public static void AddCell(Cell cell)
-        {
-            //if (Instance.cells.ContainsKey(cell.FieldPosition)) return;
-            //    Instance.cells.Add(cell.FieldPosition, cell);
-        }
-
         public void AddCell(Cell cell, Vector2Int index)
         {
-            //if (Instance.cells.ContainsKey(cell.FieldPosition)) return;
-            //    Instance.cells.Add(cell.FieldPosition, cell);
-
             cells[index.x,index.y] = cell;
         }
 
         public void ClearAllCells()
         {
             cells = new Cell[0, 0];
+        }
+
+        public bool GetHex(Vector2 fieldPosition, out Cell cell)
+        {
+            cell = null;
+
+            for (int x = 0; x < cells.GetLength(0); x++)
+            {
+                for (int y = 0; y < cells.GetLength(1); y++)
+                {
+
+                    if (cells[x,y].FieldPosition == fieldPosition)
+                    {
+                        cell = cells[x, y];
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
     }

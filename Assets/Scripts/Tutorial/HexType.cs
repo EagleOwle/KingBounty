@@ -9,7 +9,7 @@ namespace HexWorld
         [SerializeField] private Transform hexTransform;
         [SerializeField] private SpriteRenderer render;
         [SerializeField] private Sprite[] sprites;
-        [SerializeField] private HexEdge[] edges;
+        [SerializeField] private CellEdge[] edges;
 
         public Vector2 arrayPosition;
         public int type = 0;
@@ -26,18 +26,18 @@ namespace HexWorld
             this.arrayPosition = arrayPosition;
             foreach (var item in edges)
             {
-                item.Initialise(this);
+               // item.Initialise(this);
             }
         }
 
         public void FindNeighbor()
         {
-            foreach (var item in edges)
-            {
-                Vector2 neighborCoor = NegthborGridPosition(item.Direction);
-                hexHolder.GetHex(neighborCoor, out HexType newHex);
-                item.SetNeighbor(newHex);
-            }
+            //foreach (var item in edges)
+            //{
+            //    Vector2 neighborCoor = NegthborGridPosition(item.Direction);
+            //    hexHolder.GetHex(neighborCoor, out HexType newHex);
+            //    item.SetNeighbor(newHex);
+            //}
         }
 
         public void SwapType(int n)

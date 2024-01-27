@@ -254,9 +254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c055bd8a04b7b449f7c4963ab48765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawGizmos: 1
+  gameField: {fileID: 11400000, guid: 39b228a1ab936154cbaff4fcc5b7e08c, type: 2}
+  camera: {fileID: 963194227}
+  generator: {fileID: 11400000, guid: c4f32f23c37ebec4d929c6538cb60a01, type: 2}
+  drawGizmos: 0
   viewDistance: 100
-  hexes: []
 --- !u!4 &167978935
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.37776002, y: 0, z: 0, w: 0.92590356}
-  m_LocalPosition: {x: 2.46, y: 4.22, z: -2.63}
+  m_LocalPosition: {x: 0, y: 4.22, z: -2.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

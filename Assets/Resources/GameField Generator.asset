@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cd9059ecc05a74c9816c1f7bf0d858, type: 3}
   m_Name: GameField Generator
   m_EditorClassIdentifier: 
-  FieldSize: {x: 30, y: 30}
-  cellSize: 10
+  cellTypeData: {fileID: 11400000, guid: 1405e50bc5ab5464489cacee5309215a, type: 2}
+  gameField: {fileID: 11400000, guid: 39b228a1ab936154cbaff4fcc5b7e08c, type: 2}
+  FieldSize: {x: 10, y: 10}
+  CellSize: 1
+  masses: 5
+  grow: {x: 4, y: 7}
+  groundFreq: 3
+  dessertFreq: 0.8
+  grassFreq: 0.8
