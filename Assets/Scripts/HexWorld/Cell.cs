@@ -7,10 +7,10 @@ namespace HexWorld
     [System.Serializable]
     public class Cell
     {
-        public Cell(Vector2 fieldPosition, float size, CellType type, GameField gameField)
+        public Cell(Vector2 fieldPosition, CellType type, GameField gameField)
         {
             this.fieldPosition = fieldPosition;
-            this.size = size;
+            //this.size = size;
             this.type = type;
             this.gameField = gameField;
 
@@ -26,11 +26,11 @@ namespace HexWorld
 
         }
 
-        public Vector2 FieldPosition {get{return fieldPosition * size;}}
+        public Vector2 FieldPosition {get{return fieldPosition;}}
         private Vector2 fieldPosition;
 
-        public float Size => size;
-        private float size;
+        //public float Size => size;
+        //private float size;
 
         public CellEdge[] Edges => edges;
         [SerializeField] private CellEdge[] edges;
@@ -80,6 +80,12 @@ namespace HexWorld
         {
             foreach (var item in edges)
             {
+                if (type.Name == "Blue")
+                {
+                    item.Movable = true;
+                    continue;
+                }
+
                 if (item.Direction == OppositDirection(direction))
                 {
                     item.Movable = movable;

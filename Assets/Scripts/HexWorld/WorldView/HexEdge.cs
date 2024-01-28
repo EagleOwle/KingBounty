@@ -9,21 +9,6 @@ public class HexEdge : MonoBehaviour
     [SerializeField] private GameObject mount;
     [SerializeField] private GameObject forest;
 
-    //public bool Movable
-    //{
-    //    set
-    //    {
-    //        movable = value;
-    //        environment.SetActive(!movable);
-    //    }
-
-    //    get
-    //    {
-    //        return movable;
-    //    }
-    //}
-    //private bool movable;
-
     public void Show(bool movable, HexWorld.EnviromentType type)
     {
         mount.SetActive(false);
@@ -44,12 +29,5 @@ public class HexEdge : MonoBehaviour
             }
         }
     }
-
-    //[System.Serializable]
-    //public class Enviroment
-    //{
-    //    public HexWorld.EnviromentType type;
-    //    public GameObject EnviromentObject;
-    //}
 
 }

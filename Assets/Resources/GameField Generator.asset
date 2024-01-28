@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellTypeData: {fileID: 11400000, guid: 1405e50bc5ab5464489cacee5309215a, type: 2}
   gameField: {fileID: 11400000, guid: 39b228a1ab936154cbaff4fcc5b7e08c, type: 2}
-  FieldSize: {x: 10, y: 10}
-  CellSize: 1
+  FieldSize: {x: 50, y: 50}
+  CellSize: 10
   masses: 5
-  grow: {x: 4, y: 7}
+  grow: {x: 20, y: 20}
   groundFreq: 3
   dessertFreq: 0.8
   grassFreq: 0.8

@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class HexBase : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer render;
+    [SerializeField] private SpriteRenderer spriteRender;
+    [SerializeField] private MeshRenderer meshRender;
     [SerializeField] private Sprite[] sprites; 
     [SerializeField] private HexEdge[] edges;
 
@@ -17,11 +18,11 @@ public class HexBase : MonoBehaviour
 
     public void Show(HexWorld.CellType type, CellEdge[] edges)
     {
-        render.sprite = type.sprite;
+        //spriteRender.sprite = type.sprite;
+        meshRender.material = type.material;
         foreach (var item in edges)
         {
             HexEdge edge = GetEdge(item.Direction);
-            //edge.Movable = item.Movable;
             edge.Show(item.Movable, item.EnviromentType);
         }
     }

@@ -10,7 +10,7 @@ public class CameraControl : MonoBehaviour
 
     private void Start()
     {
-        targetY = 5;
+        targetY = 10;
     }
 
     private void Update()

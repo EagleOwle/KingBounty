@@ -12,7 +12,11 @@ namespace HexWorld
         [SerializeField] private GameFieldGenerator generator;
         [SerializeField] private bool drawGizmos = false;
         [SerializeField] private float viewDistance = 50;
+        [SerializeField] private float hexSize = 10;
+        
         private Dictionary<Vector3, PoolComponent> hexes = new Dictionary<Vector3, PoolComponent>();
+
+        [SerializeField] private float screenPositionOffset = 0.1f;
 
         Vector3 cellPosition;
         Vector3 lastCamPosition;
@@ -26,11 +30,11 @@ namespace HexWorld
         }
 
 
-        private void Update()
+        private void LateUpdate()
         {
-            currentCamPosition = RoundToNearest(camera.transform.position, 1);
+            //currentCamPosition = RoundToNearest(camera.transform.position, 1);
 
-            if (currentCamPosition != lastCamPosition)
+            //if (currentCamPosition != lastCamPosition)
             {
                 FindFovCells();
             }
@@ -43,12 +47,12 @@ namespace HexWorld
                 for (int y = 0; y < gameField.Cells.GetLength(1); y++)
                 {
                     cellPosition = new Vector3(gameField.Cells[x, y].FieldPosition.x, 0, gameField.Cells[x, y].FieldPosition.y);
-                    if (IsInCameraView(cellPosition))
+                    if (IsInCameraView(cellPosition * hexSize))
                     {
                        if (hexes.ContainsKey(cellPosition) == false)
                         {
-                            hex = Pool.Instance.GetObject("Hex", cellPosition, Quaternion.identity);
-                            hex.transform.localScale = Vector3.one * gameField.Cells[x, y].Size;
+                            hex = Pool.Instance.GetObject("Hex", cellPosition * hexSize, Quaternion.identity);
+                            hex.transform.localScale = Vector3.one * hexSize;
                             hexes.Add(cellPosition, hex);
                             hex.GetComponent<HexBase>().Show(gameField.Cells[x, y].Type, gameField.Cells[x, y].Edges);
                         }
@@ -70,7 +74,11 @@ namespace HexWorld
         private bool IsInCameraView(Vector3 targetPosition)
         {
             Vector3 screenPoint = camera.WorldToViewportPoint(targetPosition);
-            if (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1)
+            if (screenPoint.z + screenPositionOffset > 0 && 
+                screenPoint.x + screenPositionOffset > 0 && 
+                screenPoint.x - screenPositionOffset < 1 && 
+                screenPoint.y + screenPositionOffset > 0 && 
+                screenPoint.y - screenPositionOffset < 1)
             {
                 if (Mathf.Abs(targetPosition.z - camera.transform.position.z) < viewDistance)
                 {
@@ -103,17 +111,17 @@ namespace HexWorld
                 {
                     cellPosition = new Vector3(gameField.Cells[x,y].FieldPosition.x, 0, gameField.Cells[x, y].FieldPosition.y);
 
-                    Debug.DrawCircle(cellPosition, Quaternion.Euler(90, 90, 0), 0.4f * gameField.Cells[x, y].Size, 6, gameField.Cells[x, y].Type.color);
+                    Debug.DrawCircle(cellPosition, Quaternion.Euler(90, 90, 0), 0.4f * hexSize, 6, gameField.Cells[x, y].Type.color);
 
-                    if (IsInCameraView(cellPosition))
+                    if (IsInCameraView(cellPosition * hexSize))
                     {
                         Debug.DrawLine(cellPosition, cellPosition + Vector3.up, Color.white);
-                        Debug.DrawCircle(cellPosition, Quaternion.Euler(90, 90, 0), 0.5f * gameField.Cells[x, y].Size, 6, Color.white);
+                        Debug.DrawCircle(cellPosition, Quaternion.Euler(90, 90, 0), 0.5f * hexSize, 6, Color.white);
                     }
                     else
                     {
                         Debug.DrawLine(cellPosition, cellPosition + Vector3.up, Color.red);
-                        Debug.DrawCircle(cellPosition, Quaternion.Euler(90, 90, 0), 0.5f * gameField.Cells[x, y].Size, 6, Color.red);
+                        Debug.DrawCircle(cellPosition, Quaternion.Euler(90, 90, 0), 0.5f * hexSize, 6, Color.red);
                     }
                 }
             }

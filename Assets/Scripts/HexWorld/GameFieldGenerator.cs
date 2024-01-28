@@ -11,10 +11,10 @@ namespace HexWorld
         public GameField gameField;
         
         public Vector2Int FieldSize;
-        public float CellSize = 1;
-        [Header("Площадь строва")]
+        //public float CellSize = 1;
+        [Header("Количество стровов")]
         public int masses = 15;
-        [Header("Рост")]
+        [Header("Площадь островов")]
         public Vector2Int grow = new Vector2Int(4, 7);
         [Header("Частота земли")]
         public int groundFreq = 3;
@@ -38,7 +38,7 @@ namespace HexWorld
                         pos.x += 0.5f;
                     }
 
-                    var cell = new Cell(new Vector2(pos.x, pos.y), CellSize, cellTypeData.CellTypes[0], gameField);
+                    var cell = new Cell(new Vector2(pos.x, pos.y), cellTypeData.CellTypes[0], gameField);
                     gameField.AddCell(cell, new Vector2Int(x,y));
                 }
             }

@@ -9,6 +9,7 @@ namespace HexWorld
         public int Type;
         public Color color;
         public Sprite sprite;
+        public Material material;
     }
 
 }

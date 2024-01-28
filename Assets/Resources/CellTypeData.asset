@@ -17,23 +17,29 @@ MonoBehaviour:
     Type: 0
     color: {r: 0.10008526, g: 0, b: 1, a: 1}
     sprite: {fileID: 113338128, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+    material: {fileID: 2100000, guid: f8ad5f41789ef4be4a5ed2b82cf17471, type: 2}
   - Name: RifleGreen
     Type: 1
     color: {r: 0.07067094, g: 0.46226418, b: 0.019624414, a: 1}
     sprite: {fileID: -187966801, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+    material: {fileID: 2100000, guid: cd5feb19bf42a244182183e2534a3b71, type: 2}
   - Name: LightGreen
     Type: 2
     color: {r: 0.094770074, g: 1, b: 0, a: 1}
     sprite: {fileID: -1542159157, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+    material: {fileID: 2100000, guid: 126922bb36d0fa44eba70452502b4637, type: 2}
   - Name: Yellow
     Type: 3
     color: {r: 1, g: 0.99867284, b: 0.033018887, a: 1}
     sprite: {fileID: 111892566, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+    material: {fileID: 2100000, guid: 126922bb36d0fa44eba70452502b4637, type: 2}
   - Name: Gray
     Type: 4
     color: {r: 0.4433962, g: 0.43712175, b: 0.43712175, a: 1}
     sprite: {fileID: -279345884, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+    material: {fileID: 2100000, guid: 126922bb36d0fa44eba70452502b4637, type: 2}
   - Name: White
     Type: 5
     color: {r: 1, g: 1, b: 1, a: 1}
     sprite: {fileID: 1805454559, guid: b2a338da9969b5f468b9dee8a8cf4172, type: 3}
+    material: {fileID: 2100000, guid: 126922bb36d0fa44eba70452502b4637, type: 2}
